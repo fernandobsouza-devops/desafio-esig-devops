@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: jenkins-container
-        image: jenkins-jolokia:v1
+        image: jenkins-jolokia:v3
         imagePullPolicy: IfNotPresent
         ports:
         - name: http-jenkins

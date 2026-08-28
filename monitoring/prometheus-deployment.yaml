@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: prometheus
-        image: prom/prometheus:latest
+        image: prom/prometheus:v2.45.0
         ports:
         - containerPort: 9090
         volumeMounts:
@@ -34,9 +34,9 @@ metadata:
   namespace: default
 spec:
   type: NodePort
+  ports:
+  - port: 9090
+    targetPort: 9090
+    nodePort: 30090
   selector:
     app: prometheus
-  ports:
-    - port: 9090
-      targetPort: 9090
-      nodePort: 30090
