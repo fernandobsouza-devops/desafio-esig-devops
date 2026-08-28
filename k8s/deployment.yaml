@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-jolokia
+  namespace: default
+  labels:
+    app: jenkins-jolokia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-jolokia
+  template:
+    metadata:
+      labels:
+        app: jenkins-jolokia
+    spec:
+      containers:
+      - name: jenkins-container
+        image: jenkins-jolokia:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http-jenkins
+          containerPort: 8080
+        - name: http-jolokia
+          containerPort: 8778
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
