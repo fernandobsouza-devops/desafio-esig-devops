@@ -17,4 +17,4 @@ spec:
       protocol: TCP
       port: 8778
       targetPort: 8778
-      nodePort: 30778
+      nodePort: 30779
