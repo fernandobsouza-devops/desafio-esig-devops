@@ -17,13 +17,15 @@ spec:
     spec:
       containers:
       - name: jenkins-container
-        image: jenkins-jolokia:v3
+        image: jenkins-jolokia:v4
         imagePullPolicy: IfNotPresent
         ports:
         - name: http-jenkins
           containerPort: 8080
         - name: http-jolokia
           containerPort: 8778
+        - name: http-metrics
+          containerPort: 9404
         resources:
           requests:
             memory: "512Mi"

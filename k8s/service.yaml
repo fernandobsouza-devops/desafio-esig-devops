@@ -18,3 +18,8 @@ spec:
       port: 8778
       targetPort: 8778
       nodePort: 30779
+    - name: http-metrics
+      protocol: TCP
+      port: 9404
+      targetPort: 9404
+      nodePort: 30904
